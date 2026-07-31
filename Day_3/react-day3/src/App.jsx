@@ -3,13 +3,14 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Card from "./components/Card";
+import LoginForm from "./components/LoginForm";
 
 import jobImage from "./assets/job.avif";
-
+import JobList from "./components/JobList";
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar />
 
       <div className="cards">
         <Card
@@ -34,7 +35,9 @@ function App() {
         />
       </div>
 
-      <Footer />
+      <Footer /> */}
+ {/* <LoginForm /> */}
+ <JobList />
     </>
   );
 }
