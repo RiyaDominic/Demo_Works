@@ -7,6 +7,7 @@ import LoginForm from "./components/LoginForm";
 
 import jobImage from "./assets/job.avif";
 import JobList from "./components/JobList";
+import WelcomeMessage from "./components/WelcomeMessage";
 function App() {
   return (
     <>
@@ -37,6 +38,7 @@ function App() {
 
       <Footer /> */}
  {/* <LoginForm /> */}
+  <WelcomeMessage />
  <JobList />
     </>
   );
