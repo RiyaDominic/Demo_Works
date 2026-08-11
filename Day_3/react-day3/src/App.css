@@ -98,7 +98,7 @@ body {
 .job-card button:hover {
   background: #1d4ed8;
 } */
- body {
+ /* body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f5f5f5;
@@ -139,4 +139,201 @@ body {
 
 .error {
   color: red;
+} */
+ * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #1f2937;
+}
+
+.home {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #e8f0fe;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #5f6b7a;
+  margin-bottom: 30px;
+}
+
+.hero button {
+  padding: 13px 25px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background: #1d4ed8;
+}
+
+/* Jobs Section */
+
+.jobs-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.jobs-section > h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+/* Job List */
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Job Card */
+
+.card {
+  background: white;
+  padding: 25px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-top: 0;
+  text-transform: capitalize;
+}
+
+.card p {
+  color: #5f6b7a;
+  line-height: 1.6;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 11px 20px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.card button:hover {
+  background: #1d4ed8;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 55px 15px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .jobs-section {
+    padding: 35px 15px;
+  }
+
+  .jobs-section > h2 {
+    font-size: 26px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+/* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+}
+
+/* Footer */
+
+.footer {
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+  background: #111827;
+  color: white;
+}
+
+/* Mobile Navbar */
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
 }
