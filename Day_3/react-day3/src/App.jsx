@@ -7,6 +7,7 @@ import LoginForm from "./components/LoginForm";
 
 import jobImage from "./assets/job.avif";
 import JobList from "./components/JobList";
+import Home from "./pages/Home";
 function App() {
   return (
     <>
@@ -37,7 +38,8 @@ function App() {
 
       <Footer /> */}
  {/* <LoginForm /> */}
- <JobList />
+ {/* <JobList /> */}
+ <Home />
     </>
   );
 }

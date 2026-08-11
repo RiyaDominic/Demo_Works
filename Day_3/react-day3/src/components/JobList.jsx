@@ -156,7 +156,9 @@ function JobList() {
           <h3>{job.title}</h3>
           <p>{job.body}</p>
 
-          <button>Apply Now</button>
+          <button onClick={() => alert(`You selected: ${job.title}`)}>
+  Apply Now
+</button>
         </div>
       ))}
     </div>
