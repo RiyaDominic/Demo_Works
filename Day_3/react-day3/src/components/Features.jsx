@@ -18,29 +18,29 @@ function Features() {
   ];
 
   return (
-    <section id="features" className="px-6 py-20">
+    <section id="features" className="px-4 py-16 sm:px-6 md:py-20">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">
-            Everything you need
+        <div className="mx-auto mb-10 max-w-2xl text-center md:mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+            Everything You Need
           </h2>
 
-          <p className="mt-4 text-gray-600">
+          <p className="mt-4 text-sm leading-6 text-gray-600 sm:text-base">
             Simple tools to help you move forward in your career.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+              className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-6"
             >
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold text-gray-900 sm:text-xl">
                 {feature.title}
               </h3>
 
-              <p className="mt-3 leading-7 text-gray-600">
+              <p className="mt-3 text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">
                 {feature.description}
               </p>
             </div>
