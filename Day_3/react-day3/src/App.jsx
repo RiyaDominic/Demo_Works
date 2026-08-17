@@ -8,6 +8,9 @@ import LoginForm from "./components/LoginForm";
 import jobImage from "./assets/job.avif";
 import JobList from "./components/JobList";
 import Home from "./pages/Home";
+import Hero from "./components/Hero";
+import Features from "./components/Features";
+
 function App() {
   return (
     <>
@@ -39,7 +42,16 @@ function App() {
       <Footer /> */}
  {/* <LoginForm /> */}
  {/* <JobList /> */}
- <Home />
+<div className="min-h-screen bg-white">
+      <Navbar />
+
+      <main>
+        <Hero />
+        <Features />
+      </main>
+
+      <Footer />
+    </div>
     </>
   );
 }
