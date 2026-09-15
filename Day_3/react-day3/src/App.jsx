@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-
+import UIComponentsDemo from "./pages/UIComponentsDemo";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -41,6 +41,7 @@ function App() {
               </div>
             }
           />
+          <Route path="/ui-demo" element={<UIComponentsDemo />} />
         </Routes>
       </main>
 
