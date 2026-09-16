@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext.jsx";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const validateForm = () => {
     const newErrors = {};
@@ -41,7 +42,7 @@ function Login() {
     setIsLoading(true);
 
     setTimeout(() => {
-      localStorage.setItem("isAuthenticated", "true");
+      login();
       setIsLoading(false);
       navigate("/dashboard");
     }, 1000);

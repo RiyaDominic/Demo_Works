@@ -1,52 +1,51 @@
 import { Routes, Route } from "react-router-dom";
-import UIComponentsDemo from "./pages/UIComponentsDemo";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import ProtectedRoute from "./components/ProtectedRoute";
 
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
+import Home from "./pages/Home.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import UIComponentsDemo from "./pages/UIComponentsDemo.jsx";
+
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import AuthLayout from "./layouts/AuthLayout.jsx";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
+    <Routes>
+      {/* Public Route */}
+      <Route path="/" element={<Home />} />
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
+      {/* Authentication Routes */}
+      <Route element={<AuthLayout />}>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Route>
 
-          <Route path="/login" element={<Login />} />
+      {/* Protected Route */}
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
 
-          <Route path="/register" element={<Register />} />
+      {/* UI Components Demo */}
+      <Route path="/ui-demo" element={<UIComponentsDemo />} />
 
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="*"
-            element={
-              <div className="flex min-h-[60vh] items-center justify-center">
-                <h1 className="text-2xl font-bold text-gray-900">
-                  404 - Page Not Found
-                </h1>
-              </div>
-            }
-          />
-          <Route path="/ui-demo" element={<UIComponentsDemo />} />
-        </Routes>
-      </main>
-
-      <Footer />
-    </div>
+      {/* 404 Route */}
+      <Route
+        path="*"
+        element={
+          <div className="flex min-h-[60vh] items-center justify-center">
+            <h1 className="text-3xl font-bold text-gray-800">
+              404 - Page Not Found
+            </h1>
+          </div>
+        }
+      />
+    </Routes>
   );
 }
 
