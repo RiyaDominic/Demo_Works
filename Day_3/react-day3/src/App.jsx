@@ -7,6 +7,8 @@ import Dashboard from "./pages/Dashboard.jsx";
 import UIComponentsDemo from "./pages/UIComponentsDemo.jsx";
 import EmployerDashboard from "./pages/EmployerDashboard.jsx";
 import CandidateDashboard from "./pages/CandidateDashboard.jsx";
+import EmployerJobs from "./pages/EmployerJobs.jsx";
+import CandidateJobs from "./pages/CandidateJobs.jsx";
 import PlaceholderPage from "./pages/PlaceholderPage.jsx";
 
 import DashboardLayout from "./components/dashboard/DashboardLayout.jsx";
@@ -45,21 +47,17 @@ function App() {
         }
       />
 
-      {/* Employer Placeholder Routes */}
+      {/* Employer Job Management */}
       <Route
         path="/dashboard/employer/jobs"
         element={
           <ProtectedRoute>
-            <DashboardLayout role="employer">
-              <PlaceholderPage
-                title="Post Jobs"
-                description="Create and manage job postings."
-              />
-            </DashboardLayout>
+            <EmployerJobs />
           </ProtectedRoute>
         }
       />
 
+      {/* Employer Placeholder Routes */}
       <Route
         path="/dashboard/employer/applicants"
         element={
@@ -98,21 +96,17 @@ function App() {
         }
       />
 
-      {/* Candidate Placeholder Routes */}
+      {/* Candidate Job Listing */}
       <Route
         path="/dashboard/candidate/jobs"
         element={
           <ProtectedRoute>
-            <DashboardLayout role="candidate">
-              <PlaceholderPage
-                title="Browse Jobs"
-                description="Explore available job opportunities."
-              />
-            </DashboardLayout>
+            <CandidateJobs />
           </ProtectedRoute>
         }
       />
 
+      {/* Candidate Placeholder Routes */}
       <Route
         path="/dashboard/candidate/applications"
         element={
