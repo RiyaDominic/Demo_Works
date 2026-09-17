@@ -1,11 +1,15 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import UIComponentsDemo from "./pages/UIComponentsDemo.jsx";
+import EmployerDashboard from "./pages/EmployerDashboard.jsx";
+import CandidateDashboard from "./pages/CandidateDashboard.jsx";
+import PlaceholderPage from "./pages/PlaceholderPage.jsx";
 
+import DashboardLayout from "./components/dashboard/DashboardLayout.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import AuthLayout from "./layouts/AuthLayout.jsx";
 
@@ -21,9 +25,125 @@ function App() {
         <Route path="/register" element={<Register />} />
       </Route>
 
-      {/* Protected Route */}
+      {/* Default Dashboard Redirect */}
       <Route
         path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <Navigate to="/dashboard/candidate" replace />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Employer Dashboard */}
+      <Route
+        path="/dashboard/employer"
+        element={
+          <ProtectedRoute>
+            <EmployerDashboard />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Employer Placeholder Routes */}
+      <Route
+        path="/dashboard/employer/jobs"
+        element={
+          <ProtectedRoute>
+            <DashboardLayout role="employer">
+              <PlaceholderPage
+                title="Post Jobs"
+                description="Create and manage job postings."
+              />
+            </DashboardLayout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/dashboard/employer/applicants"
+        element={
+          <ProtectedRoute>
+            <DashboardLayout role="employer">
+              <PlaceholderPage
+                title="Applicants"
+                description="Review and manage job applicants."
+              />
+            </DashboardLayout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/dashboard/employer/interviews"
+        element={
+          <ProtectedRoute>
+            <DashboardLayout role="employer">
+              <PlaceholderPage
+                title="Interviews"
+                description="Manage scheduled interviews."
+              />
+            </DashboardLayout>
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Candidate Dashboard */}
+      <Route
+        path="/dashboard/candidate"
+        element={
+          <ProtectedRoute>
+            <CandidateDashboard />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Candidate Placeholder Routes */}
+      <Route
+        path="/dashboard/candidate/jobs"
+        element={
+          <ProtectedRoute>
+            <DashboardLayout role="candidate">
+              <PlaceholderPage
+                title="Browse Jobs"
+                description="Explore available job opportunities."
+              />
+            </DashboardLayout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/dashboard/candidate/applications"
+        element={
+          <ProtectedRoute>
+            <DashboardLayout role="candidate">
+              <PlaceholderPage
+                title="Applications"
+                description="Track your job applications."
+              />
+            </DashboardLayout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/dashboard/candidate/saved"
+        element={
+          <ProtectedRoute>
+            <DashboardLayout role="candidate">
+              <PlaceholderPage
+                title="Saved Jobs"
+                description="View your saved job opportunities."
+              />
+            </DashboardLayout>
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Old Dashboard Route */}
+      <Route
+        path="/old-dashboard"
         element={
           <ProtectedRoute>
             <Dashboard />
