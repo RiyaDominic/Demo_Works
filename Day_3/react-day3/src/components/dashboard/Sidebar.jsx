@@ -8,12 +8,13 @@ function Sidebar({ role = "candidate" }) {
     { label: "Interviews", path: "/dashboard/employer/interviews" },
   ];
 
-  const candidateMenuItems = [
-    { label: "Overview", path: "/dashboard/candidate" },
-    { label: "Browse Jobs", path: "/dashboard/candidate/jobs" },
-    { label: "Applications", path: "/dashboard/candidate/applications" },
-    { label: "Saved Jobs", path: "/dashboard/candidate/saved" },
-  ];
+ const candidateMenuItems = [
+  { label: "Overview", path: "/dashboard/candidate" },
+  { label: "Browse Jobs", path: "/dashboard/candidate/jobs" },
+  { label: "Applications", path: "/dashboard/candidate/applications" },
+  { label: "Saved Jobs", path: "/dashboard/candidate/saved" },
+  { label: "Profile", path: "/dashboard/candidate/profile" },
+];
 
   const menuItems =
     role === "employer" ? employerMenuItems : candidateMenuItems;

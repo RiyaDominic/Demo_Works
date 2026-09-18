@@ -1,3 +1,4 @@
+
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "./pages/Home.jsx";
@@ -9,6 +10,7 @@ import EmployerDashboard from "./pages/EmployerDashboard.jsx";
 import CandidateDashboard from "./pages/CandidateDashboard.jsx";
 import EmployerJobs from "./pages/EmployerJobs.jsx";
 import CandidateJobs from "./pages/CandidateJobs.jsx";
+import CandidateProfile from "./pages/CandidateProfile.jsx";
 import PlaceholderPage from "./pages/PlaceholderPage.jsx";
 
 import DashboardLayout from "./components/dashboard/DashboardLayout.jsx";
@@ -102,6 +104,18 @@ function App() {
         element={
           <ProtectedRoute>
             <CandidateJobs />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Candidate Profile */}
+      <Route
+        path="/dashboard/candidate/profile"
+        element={
+          <ProtectedRoute>
+            <DashboardLayout role="candidate">
+              <CandidateProfile />
+            </DashboardLayout>
           </ProtectedRoute>
         }
       />
