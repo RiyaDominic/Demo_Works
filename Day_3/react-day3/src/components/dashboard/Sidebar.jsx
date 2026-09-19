@@ -22,8 +22,7 @@ function Sidebar({ role = "candidate" }) {
   const roleTitle = role === "employer" ? "Employer" : "Candidate";
 
   return (
-    <aside className="flex min-h-screen w-64 flex-col bg-gray-900 text-white">
-      <div className="border-b border-gray-700 px-6 py-5">
+<aside className="flex min-h-screen w-64 shrink-0 flex-col bg-gray-900 text-white">      <div className="border-b border-gray-700 px-6 py-5">
         <h1 className="text-xl font-bold">HireFlow</h1>
         <p className="mt-1 text-sm text-gray-400">
           {roleTitle} Portal

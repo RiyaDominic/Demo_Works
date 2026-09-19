@@ -1,3 +1,4 @@
+
 import DashboardLayout from "../components/dashboard/DashboardLayout.jsx";
 import OverviewCard from "../components/dashboard/OverviewCard.jsx";
 import { employerStats } from "../data/dashboardData.js";
@@ -5,20 +6,20 @@ import { employerStats } from "../data/dashboardData.js";
 function EmployerDashboard() {
   return (
     <DashboardLayout role="employer">
-      <div className="space-y-6">
+      <div className="mx-auto max-w-7xl space-y-6">
         {/* Page Header */}
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">
+          <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
             Employer Overview
           </h1>
 
-          <p className="mt-1 text-gray-500">
+          <p className="mt-1 text-sm text-gray-500 sm:text-base">
             Manage your jobs and track applicants.
           </p>
         </div>
 
         {/* Overview Cards */}
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:gap-6 xl:grid-cols-4">
           {employerStats.map((stat) => (
             <OverviewCard
               key={stat.title}
@@ -30,8 +31,8 @@ function EmployerDashboard() {
           ))}
         </div>
 
-        {/* Placeholder Data View */}
-        <div className="rounded-xl bg-white p-6 shadow-sm">
+        {/* Recent Job Postings */}
+        <section className="rounded-xl bg-white p-4 shadow-sm sm:p-6">
           <h2 className="text-lg font-semibold text-gray-900">
             Recent Job Postings
           </h2>
@@ -40,12 +41,12 @@ function EmployerDashboard() {
             Your recent job postings will appear here.
           </p>
 
-          <div className="mt-6 rounded-lg border border-dashed border-gray-300 p-8 text-center">
-            <p className="text-gray-500">
+          <div className="mt-6 rounded-lg border border-dashed border-gray-300 p-6 text-center sm:p-8">
+            <p className="text-sm text-gray-500">
               No recent job postings available.
             </p>
           </div>
-        </div>
+        </section>
       </div>
     </DashboardLayout>
   );

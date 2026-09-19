@@ -1,4 +1,9 @@
+
+import { useNavigate } from "react-router-dom";
+
 function JobGrid() {
+  const navigate = useNavigate();
+
   const jobs = [
     {
       title: "Frontend Developer",
@@ -71,7 +76,13 @@ function JobGrid() {
                 <p>💰 {job.salary}</p>
               </div>
 
-              <button className="mt-6 w-full rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white transition hover:bg-blue-700">
+              <button
+                type="button"
+                onClick={() =>
+                  navigate("/dashboard/candidate/jobs")
+                }
+                className="mt-6 w-full rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white transition hover:bg-blue-700"
+              >
                 Apply Now
               </button>
             </div>

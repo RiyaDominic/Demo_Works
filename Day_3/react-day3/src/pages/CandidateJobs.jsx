@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import DashboardLayout from "../components/dashboard/DashboardLayout.jsx";
 import JobCard from "../components/jobs/JobCard.jsx";
@@ -31,8 +32,7 @@ function CandidateJobs() {
     const matchesLocation =
       !filters.location || job.location === filters.location;
 
-    const matchesType =
-      !filters.type || job.type === filters.type;
+    const matchesType = !filters.type || job.type === filters.type;
 
     const matchesCategory =
       !filters.category || job.category === filters.category;
@@ -47,25 +47,27 @@ function CandidateJobs() {
 
   return (
     <DashboardLayout role="candidate">
-      <div className="space-y-6">
+      <div className="mx-auto max-w-7xl space-y-6">
+        {/* Page Header */}
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">
+          <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
             Browse Jobs
           </h1>
 
-          <p className="mt-1 text-gray-500">
+          <p className="mt-1 text-sm text-gray-500 sm:text-base">
             Find job opportunities that match your skills.
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[280px_1fr]">
+        {/* Filters and Job Listings */}
+        <div className="grid gap-4 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-6">
           <FilterPanel
             filters={filters}
             onFilterChange={handleFilterChange}
           />
 
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
+          <section className="min-w-0 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-2">
               <h2 className="text-xl font-semibold text-gray-900">
                 Available Jobs
               </h2>
@@ -80,13 +82,13 @@ function CandidateJobs() {
                 <JobCard key={job.id} job={job} />
               ))
             ) : (
-              <div className="rounded-xl bg-white p-8 text-center shadow-sm">
-                <p className="text-gray-500">
+              <div className="rounded-xl bg-white p-6 text-center shadow-sm sm:p-8">
+                <p className="text-sm text-gray-500">
                   No jobs match your filters.
                 </p>
               </div>
             )}
-          </div>
+          </section>
         </div>
       </div>
     </DashboardLayout>

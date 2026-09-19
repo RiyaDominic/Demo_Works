@@ -1,4 +1,9 @@
+
+import { useNavigate } from "react-router-dom";
+
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-blue-50 px-6 py-20">
       <div className="mx-auto max-w-7xl text-center">
@@ -17,11 +22,19 @@ function Hero() {
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-          <button className="rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700">
+          <button
+            type="button"
+            onClick={() => navigate("/dashboard/candidate/jobs")}
+            className="rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700"
+          >
             Explore Jobs
           </button>
 
-          <button className="rounded-lg border border-blue-600 px-6 py-3 font-semibold text-blue-600 hover:bg-blue-100">
+          <button
+            type="button"
+            onClick={() => navigate("/dashboard/employer/jobs")}
+            className="rounded-lg border border-blue-600 px-6 py-3 font-semibold text-blue-600 hover:bg-blue-100"
+          >
             Post a Job
           </button>
         </div>

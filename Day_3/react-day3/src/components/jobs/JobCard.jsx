@@ -1,9 +1,10 @@
+
 function JobCard({ job }) {
   return (
-    <div className="rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md">
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <h2 className="text-lg font-semibold text-gray-900">
+    <article className="rounded-xl bg-white p-4 shadow-sm transition hover:shadow-md sm:p-6">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div className="min-w-0">
+          <h2 className="break-words text-lg font-semibold text-gray-900">
             {job.title}
           </h2>
 
@@ -12,7 +13,7 @@ function JobCard({ job }) {
           </p>
         </div>
 
-        <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700">
+        <span className="shrink-0 rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700">
           {job.type}
         </span>
       </div>
@@ -27,11 +28,11 @@ function JobCard({ job }) {
         </span>
       </div>
 
-      <p className="mt-4 text-sm text-gray-600">
+      <p className="mt-4 text-sm leading-6 text-gray-600">
         {job.description}
       </p>
 
-      <div className="mt-5 flex items-center justify-between">
+      <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
         <p className="font-semibold text-green-600">
           {job.salary}
         </p>
@@ -43,7 +44,7 @@ function JobCard({ job }) {
           View Details
         </button>
       </div>
-    </div>
+    </article>
   );
 }
 
